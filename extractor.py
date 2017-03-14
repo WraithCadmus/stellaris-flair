@@ -7,6 +7,9 @@ import base64
 # Pillow can't read the DDS files
 #from PIL import Image
 
+# Size of each sprite (assuming square)
+spritesize = 25
+
 # Paths containing icons we want
 
 sourcepaths = ['Stellaris/gfx/interface/icons/ethics/',
@@ -36,7 +39,7 @@ counter=0
 # Create files
 for s in sourcefiles:
     #print(s)
-    subprocess.call(['convert', s, '-resize', '25x25', 'output/'+str(counter).zfill(4)+'.png'])
+    subprocess.call(['convert', s, '-resize', str(spritesize)+'x'+str(spritesize), 'output/'+str(counter).zfill(4)+'.png'])
     counter += 1
 
 # Ccompile files into spritesheet (as variable)
