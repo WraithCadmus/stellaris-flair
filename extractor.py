@@ -2,6 +2,7 @@
 
 import glob
 import subprocess
+import base64
 
 # Pillow can't read the DDS files
 #from PIL import Image
@@ -34,9 +35,10 @@ counter=0
 
 # Create files
 for s in sourcefiles:
-    print(s)
+    #print(s)
     subprocess.call(['convert', s, '-resize', '25x25', 'output/'+str(counter).zfill(4)+'.png'])
     counter += 1
 
-#compile files
-subprocess.call(['convert', 'output/*.png', '-append', 'spritesheet.png'])
+# Ccompile files into spritesheet (as variable)
+spritesheet = subprocess.check_output(['convert', 'output/*.png', '-append', 'png:-'])
+print(base64.b64encode(spritesheet))
