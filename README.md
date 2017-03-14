@@ -6,7 +6,12 @@ Having done some work before trying to extract flags from Europa Universalis IV 
 
 ## Usage
 
-You'll need ImageMagick on your command line, and a copy of the Stellaris base game in a folder called 'Stellaris' at the same level as the script. When run extractor.py produces a base64 encoded vertical spritesheet at 25x25 pixels on stdout. See spritesheet.txt and spritesheet.png for an example.
+You'll need 
+* ImageMagick on your command line
+* A copy of the Stellaris base game in a folder called 'Stellaris' at the same level as the script (this is the same contents as C:\Program Files (x86)\Steam\steamapps\common\Stellaris for Steam on Windows users)
+* An emtpy dir called 'output' at that same level for temporary PNG files
+
+When run extractor.py produces a base64 encoded vertical spritesheet at 25x25 pixels on stdout. See spritesheet.txt and spritesheet.png for an example.
 
 ## Current Extractions
 
@@ -23,6 +28,7 @@ This script is running on my NAS (CentOS 7) with Python 2.7 and ImageMagick (fro
 
 ## Future improvements
 * More sprites
-* More easily change sprite size
+* ~~More easily changed sprite size~~
 * CSS generator for Reddit
+* Removing need for temp files
 * Use of PIL/Pillow?
