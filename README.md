@@ -30,5 +30,6 @@ This script is running on my NAS (CentOS 7) with Python 2.7 and ImageMagick (fro
 * More sprites
 * ~~More easily changed sprite size~~
 * CSS generator for Reddit
+* Keep names of files
 * Removing need for temp files
 * Use of PIL/Pillow?
