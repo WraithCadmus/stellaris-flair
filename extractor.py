@@ -32,7 +32,11 @@ sourcefiles.remove('Stellaris/gfx/interface/icons/traits/trait_selected.dds')
 # Counter to ensure rational filenames
 counter=0
 
+# Create files
 for s in sourcefiles:
-    print(str(counter)+': '+ s)
+    print(s)
     subprocess.call(['convert', s, '-resize', '25x25', 'output/'+str(counter).zfill(4)+'.png'])
     counter += 1
+
+#compile files
+subprocess.call(['convert', 'output/*.png', '-append', 'spritesheet.png'])
