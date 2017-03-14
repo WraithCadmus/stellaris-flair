@@ -1,11 +1,14 @@
 #!/usr/bin/python
 
-import os
 import glob
+import subprocess
+
+# Pillow can't read the DDS files
+#from PIL import Image
 
 # Paths containing icons we want
 
-sources = ['Stellaris/gfx/interface/icons/ethics/',
+sourcepaths = ['Stellaris/gfx/interface/icons/ethics/',
            'Stellaris/gfx/interface/icons/governments/',
            'Stellaris/gfx/interface/icons/traits/',
            'Stellaris/gfx/interface/icons/traits/leader_traits/']
@@ -17,7 +20,19 @@ sources = ['Stellaris/gfx/interface/icons/ethics/',
 
 sourcefiles = []
 
-for s in sources:
+for s in sourcepaths:
     sourcefiles.extend(glob.glob(s + '*.dds'))
 
-print sourcefiles
+# We don't want the selection icons
+sourcefiles.remove('Stellaris/gfx/interface/icons/ethics/ethic_selected.dds')
+sourcefiles.remove('Stellaris/gfx/interface/icons/traits/trait_selected.dds')
+
+# Test conversion to PNG
+
+# Counter to ensure rational filenames
+counter=0
+
+for s in sourcefiles:
+    print(str(counter)+': '+ s)
+    subprocess.call(['convert', s, '-resize', '25x25', 'output/'+str(counter).zfill(4)+'.png'])
+    counter += 1
