@@ -11,11 +11,11 @@ You'll need
 * A copy of the Stellaris base game in a folder called 'Stellaris' at the same level as the script (this is the same contents as C:\Program Files (x86)\Steam\steamapps\common\Stellaris for Steam on Windows users)
 * An emtpy dir called 'output' at that same level for temporary PNG files
 
-When run extractor.py produces a veritcal spritesheet based on all the folders listed in the 'sourcepaths' argument.
+When run extractor.py produces a veritcal spritesheet based on all the folders listed in the 'sourcepaths' argument caled 'spritesheet.png' and a text file containing the names and offsets of all the flairs, called 'spritesheet.css'.
 
 ## Current Extractions
 
-Currently (based on path name) the spritesheet output should contain the icons for 
+Currently (based on path name) the spritesheet output should contain the icons for:
 
 * Ethics (aka Ethos)
 * Governments
@@ -29,8 +29,8 @@ This script is running on my NAS (CentOS 7) with Python 2.7 and ImageMagick (fro
 ## Future improvements
 * More sprites
 * ~~More easily changed sprite size~~
-* CSS generator for Reddit
-* Keep names of files
+* ~~CSS generator for Reddit~~
+* ~~Keep names of files~~
 * Removing need for temp files
 * Use of PIL/Pillow?
 * Source paths in a config file?
